@@ -56,7 +56,7 @@ Datasetini oluştururken yapılan sorgular 2022 yılının tamamı için yapılm
 
 Veriseti oluşturmak için twitterdan her gün bir kategori için 16 adet tweet çekiliyor. 365 ayrı gün için tweet çekildiği için her kategori için 5840 adet tweet bulunmakta.
 4 kategorimiz olduğu için verisetinde toplam 23.360 tweet bulunuyor. Modelin başarısını arttırmak için her kategori için eşit miktarda tweet çekiliyor.<br/><br/>
-### Verisetinde bulunan kategorilerdeki tweet sayıları:<br/><br/>
+### Verisetinde Bulunan Kategorilerdeki Tweet Sayıları:<br/><br/>
 
 ![data_set_veri_sayisi](https://user-images.githubusercontent.com/77435563/208323609-097d1ee4-3259-43ca-83ae-c65f41f1a387.jpg)
 
@@ -64,7 +64,7 @@ Veriseti oluşturmak için twitterdan her gün bir kategori için 16 adet tweet 
 <br/>
 
 4 kategori için 23.360 verinin çekilmesi işlemi ortalama 11 dakika 14 saniye sürüyor.<br/><br/>
-### Verilerin çekilme süreleri:<br/><br/>
+### Verilerin Çekilme Süreleri:<br/><br/>
 
 ![Calisma_Suresi](https://user-images.githubusercontent.com/77435563/208323627-4d1c1486-3fd5-4eac-85db-676e4d7ae64f.jpg)
 
@@ -80,17 +80,17 @@ Verisetindeki kolonlarımız aşağıdaki gibidir:<br/>
 <br/><br/>
 Verisetine veriler eklenirken kategorileri ile birlikte ekleniyorlar. Bunun sebebi oluşturulacak olan modeli eğitmek için hangi kategoriye ait olduğunu bilmemiz gerektiğidir. <br/><br/>
 
-### Oluşturulmuş olan verisetinin görseli:<br/><br/>
+### Oluşturulmuş Olan Verisetinin Görseli:<br/><br/>
 ![data_set](https://user-images.githubusercontent.com/77435563/208323700-beb37519-6467-4230-b2e3-b59df79e17e8.jpg)
 <br/><br/>
-# Tweetlerin temizlenmesi ve lemmatization işlemi<br/>
+# Tweetlerin Temizlenmesi ve Lemmatization İşlemi<br/>
 Veriseti oluşturulduktan sonra modelin daha iyi çalışması ve başarı oranının daha yüksek olması için tweetlerin temizlenmesi gerekmektedir. Tweetlerin içerisinde emojiler, noktalama işaretleri, stopwordsler, linkler gibi istenmeyen ve modelin başarısını düşürecek veriler tweetlerin içerisinden temizleniyor. Daha sonra lemmatization (kelimelerin köklerinin alınması) işlemi yapılarak temiz ve kelimelerin köklerinden oluşan tweetler elde ediliyor.
 <br/><br/>
-### Oluşturulan temiz tweet görseli<br/><br/>
+### Oluşturulan Temiz Tweet Görseli<br/><br/>
 ![clean](https://user-images.githubusercontent.com/77435563/209435327-a5f9ffd7-bdcd-4f6e-954c-bb912484d395.jpg)
 <br/><br/>
 
-# Modelin oluşturulması ve tweetlerin kategorilendirilmesi<br/>
+# Modelin Oluşturulması ve Tweetlerin Kategorilendirilmesi<br/>
 
 ## Model Seçimi
 Yapılacak kategorilendirme işleminin hangi modelde daha yüksek başarı oranı vereceğini tespit etmek amacıyla araştırma yapılıp aynı zamanda bazı modeller üzerinde de test edilmiştir. Başlangıç olarak 3 popüler model üzerinde denemeler yapılmıştır. Bu modeller Naive Bayes, DecitionTree ve K-Nearest Neighbor modelidir. Veriseti üzerinde bu modellerin accuracy ve f1 score ları test edilmiştir. Projedeki test veriseti sonuçlarına bakıldığında:<br/>
@@ -117,13 +117,13 @@ Aşağıda verisetinin nasıl parçalanacağının bir örneği gösterilmiştir
 <br/>
 Verisetini parçalamak için train_test_split() fonksiyonu kullanılmıştır.<br/>
 
-### Tweetlerin vektörel matrisinin çıkarılması
+### Tweetlerin Vektörel Matrisinin Çıkarılması
 Tweetler metinden oluştuğu için bunun bilgisayar ortamında işlenmesi mümkün değildir bu yüzden veriler sayısal değerlere dönüştürülmelidir. Bir sözlük oluşturularak dökümandaki her kelime için bir indexleme yapılır. Daha sonra hangi index numarasına sahip kelimenin hangi tweette kaç kere geçtiği hesaplanarak sayma matrisi oluşturulur. Bu işlemi yaparken tf-idf vectorizer kullanılarak bir kelimenin döküman içindeki önemi istatistiksel olarak hesaplanmıştır. Bu sayede her tweette geçen model için anlamsız kelimelerin önemi düşürülmüştür yani stopwordsler tekrardan ayıklanmıştır. <br/><br/>
 
-### Modelin Eğitilmesi
+### Modellerin Eğitilmesi
 Daha önceden parçalanmış olan X_train ve y_train verileri Naive Bayes ve Support Vector Machine modeline gönderilerek modeller eğitilmiştir. Eğitim sonucunda modellerin accuracy ve f1 score değerleri hesaplanmıştır. Modelleri eğitmek için sklearn kütüphanesi kullanılmıştır.<br/><br/>
 
-### Modelin Başarısının Hesaplanması
+### Modellerin Başarısının Hesaplanması
 Modelin başarısı hem train hem test verileri üzerinden Accuracy ve F1 score ile ölçülmüştür. Alınan sonuçlar aşağıda bulunmaktadır.<br/><br/>
 
 Naive Bayes             |  Support Vector Machine
@@ -156,7 +156,7 @@ Modellerin hata oranlarını tespit etmek için 2 farklı metrik kullanılmışt
 ##### Ortalama Kare Hatası(MSE)
 Ortalama Kare Hatası tahmin edilen sonuçlarınızın gerçek sayıdan ne kadar farklı olduğuna dair size mutlak bir sayı verir.<br/>
 
-##### Ortalama Mutlak Hata(MAE)(MSE)
+##### Ortalama Mutlak Hata(MAE)
 Ortalama mutlak hata, mutlak hata değerinin toplamını alır, hata terimlerinin toplamının daha doğrudan bir temsilidir.<br/>
 
 ![image](https://user-images.githubusercontent.com/77435563/209441007-321dd72c-936a-499d-b6ed-98d4fa4e533a.png)<br/><br/>
@@ -167,6 +167,7 @@ Sonuçlar incelendiğinde Support Vector Machine modelinin Naive Bayes modeline 
 
 ### Manuel Tweet Testi
 Modeli manuel olarak test etmek için elle bazı tweetler girilecek ve modelin bu tweetlerin hangi kategoriye ait olduğunu tahmin etmesi istenecektir. Test sonuçları aşağıda gösterilmiştir.
+<br/>
 ##### Test1:
 ![test1](https://user-images.githubusercontent.com/77435563/209444285-c282e9bc-783d-46b9-9a78-c9680c74316a.jpg)
 <br/>
