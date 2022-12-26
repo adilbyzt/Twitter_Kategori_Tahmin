@@ -111,7 +111,7 @@ Clean tweetlerin bulunduğu "clean_all_tweets.csv" dosyası dataframeye aktarıl
 ![labels](https://user-images.githubusercontent.com/77435563/209437433-be95afad-bcfc-4654-bde2-21c913d844fd.jpg) <br/><br/>
 
 ### Verisetinin Parçalanması
-Modelin başarısını doğru şekilde ölçebilmek için modeli eğittiğimiz veriler ile test ettiğimiz veriler farklı olmalıdır. Modelin eğitilmiş olduğu verileri tekrar modele gönderirsek model bu veriler ile eğitildiği için başarısı yüksek ve yanıltıcı olacaktır. Bu yüzden verisetini parçalamamız gerekir. Bu projede verisetinin %80 'i ile modeli eğitmek için, %20 'si de modeli test etmek için kullanılacaktır. <br/>
+Modelin başarısını doğru şekilde ölçebilmek için modeli eğittiğimiz veriler ile test ettiğimiz veriler farklı olmalıdır. Modelin eğitilmiş olduğu verileri tekrar modele gönderirsek model bu veriler ile eğitildiği için başarısı yüksek ve yanıltıcı olacaktır. Bu yüzden verisetini parçalamamız gerekir. Bu projede verisetinin %80 'i modeli eğitmek için, %20 'si de modeli test etmek için kullanılacaktır. <br/>
 Aşağıda verisetinin nasıl parçalanacağının bir örneği gösterilmiştir.<br/><br/>
 ![train_test](https://user-images.githubusercontent.com/77435563/209437930-439dc4dd-c353-4205-b437-3d6d9aa5762d.jpg)
 <br/>
